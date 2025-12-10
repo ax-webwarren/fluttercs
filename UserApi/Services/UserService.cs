@@ -83,7 +83,7 @@ public class UserService
         }
     }
 
-    public async Task<String> saveUserDetails(
+    public async Task<User> saveUserDetails(
         string name,
         string permission
     )
@@ -99,15 +99,15 @@ public class UserService
             _context.Users.Add(newUser);
             _context.SaveChanges();
 
-            return JsonSerializer.Serialize(new{ success = true, data = newUser, message = "Success" });
+            return newUser;
         }
         catch (Exception err)
         {
-            return JsonSerializer.Serialize(new{ success = false, message = err.Message });
+            return new User();
         }
     }
 
-    public async Task<String> updateUserDetails(
+    public async Task<User> updateUserDetails(
         int id,
         string name,
         string permission
@@ -124,10 +124,10 @@ public class UserService
             await _context.SaveChangesAsync();
         }
 
-        return JsonSerializer.Serialize(new{ success = true, message = "Success", data = user });
+        return user;
     }
 
-    public async Task<String> removeUser(
+    public async Task<Boolean> removeUser(
         int id
     )
     {
@@ -138,9 +138,9 @@ public class UserService
         {
             _context.Users.Remove(user);
             // user.delete_flag = "y";
-            // await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        return JsonSerializer.Serialize(new{ success = true, message = "Success" });
+        return true;
     }
 }

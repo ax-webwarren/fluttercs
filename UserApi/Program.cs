@@ -8,7 +8,7 @@ using UserApi.Services; // Ensure your UserService is accessible
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Add API controllers support (essential for returning JSON responses)
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -32,7 +32,32 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add UserService
 builder.Services.AddScoped<UserService>();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin() // USE ONLY FOR LOCAL TESTING
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+                    /*
+                   .WithOrigins(
+                        "http://localhost:5000", // Example: Your C# HTTPS port
+                        "https://localhost:7123", // Example: Your C# HTTP port
+                        "http://localhost:8000", // Common Flutter web development port
+                        "http://127.0.0.1:8000",
+                        "http://localhost:50123", // Check your actual Flutter port
+                        "http://127.0.0.1:50123"
+                    )
+                    */
+        });
+});
+
 var app = builder.Build();
+
+// ... inside Configure method ...
+app.UseCors("AllowAllOrigins");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -50,7 +75,7 @@ app.UseRouting();
 app.UseAuthorization(); // Add authorization middleware if you plan to secure endpoints
 
 // 2. Map the controllers (this tells the app to look for [ApiController] classes)
-app.MapControllers(); 
+app.MapControllers();
 
 app.Use(async (context, next) =>
 {

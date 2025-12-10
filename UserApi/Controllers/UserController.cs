@@ -34,8 +34,8 @@ public class UserController
     {
         try
         {
-            var users = await _userService.getUsers();
-            return JsonSerializer.Serialize(new { success = true, users });
+            var data = await _userService.getUsers();
+            return JsonSerializer.Serialize(new { success = true, data });
         }
         catch (Exception e)
         {
@@ -47,8 +47,8 @@ public class UserController
     {
         try
         {
-            var user = await _userService.getUserDetails(id);
-            return JsonSerializer.Serialize(new { success = true, user });
+            var data = await _userService.getUserDetails(id);
+            return JsonSerializer.Serialize(new { success = true, data });
         }
         catch (Exception e)
         {
@@ -60,11 +60,11 @@ public class UserController
     {
         try
         {
-            var user = await _userService.saveUserDetails(
+            var data = await _userService.saveUserDetails(
                 newUser.name,
                 newUser.permission
             );
-            return JsonSerializer.Serialize(new { success = true, user });
+            return JsonSerializer.Serialize(new { success = true, data });
         }
         catch (Exception e)
         {
@@ -76,12 +76,12 @@ public class UserController
     {
         try
         {
-            var user = await _userService.updateUserDetails(
+            var data = await _userService.updateUserDetails(
                 id,
                 updatedUser.name,
                 updatedUser.permission
             );
-            return JsonSerializer.Serialize(new { success = true, user });
+            return JsonSerializer.Serialize(new { success = true, data });
         }
         catch (Exception e)
         {
@@ -93,8 +93,8 @@ public class UserController
     {
         try
         {
-            var user = await _userService.removeUser(id);
-            return JsonSerializer.Serialize(new { success = true, user });
+            var data = await _userService.removeUser(id);
+            return JsonSerializer.Serialize(new { success = true, data });
         }
         catch (Exception e)
         {

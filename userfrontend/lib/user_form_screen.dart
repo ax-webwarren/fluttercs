@@ -44,6 +44,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
       if (widget.user == null) {
         // Create new user
         User createdUser = await _apiService.createUser(newUser);
+        print(createdUser.id);
         success = createdUser.id != 0;
       } else {
         // Update existing user
