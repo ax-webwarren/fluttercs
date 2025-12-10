@@ -1,2 +1,7 @@
 UserApi/obj
 UserApi/bin
+userfrontend/build
+userfrontend/.dart_tool
+userfrontend/android/app/debug
+userfrontend/android/app/profile
+userfrontend/android/app/release

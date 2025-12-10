@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tIuAptxBdwE=",
+  "dgSpecHash": "9BfEc5Tuf9c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\UserApi.csproj",
+  "projectFilePath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\UserApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\War\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\War\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",

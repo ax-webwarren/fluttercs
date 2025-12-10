@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\UserApi.csproj": {}
+    "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\UserApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\UserApi.csproj": {
+    "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\UserApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\UserApi.csproj",
+        "projectUniqueName": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\UserApi.csproj",
         "projectName": "UserApi",
-        "projectPath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\UserApi.csproj",
+        "projectPath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\UserApi.csproj",
         "packagesPath": "C:\\Users\\War\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\UserApi\\obj\\",
+        "outputPath": "C:\\Users\\War\\Downloads\\PROJ\\Flutter-C#\\userapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\War\\AppData\\Roaming\\NuGet\\NuGet.Config"
